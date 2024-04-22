@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="watchman" class="org.example.Watchman">
+        <property name="park">
+            <ref bean="park"></ref>
+        </property>
+       <constructor-arg value="Сидоров А. Г."/>
+    </bean>
+
+    <bean id="park" class="org.example.Park">
+        <property name="watchman">
+            <ref bean="watchman"></ref>
+        </property>
+    </bean>
+
+</beans>
